@@ -171,7 +171,7 @@ function renderuj_menu() {
     ];
     let opcja_menu = document.querySelector(".menu_opcje");
     menu_opcje.forEach((opcja) => {
-        przycisk = document.createElement("button");
+        const przycisk = document.createElement("button");
         przycisk.id = opcja[0];
         przycisk.innerText = opcja[1];
         if (opcja.length >= 3) {
@@ -181,7 +181,7 @@ function renderuj_menu() {
                     document.getElementById(opcja[2]),
                     "#" + opcja[2] + " h2 button"
                 );
-                licznik = document.createElement("div");
+                const licznik = document.createElement("div");
                 licznik.className = "licznik_menu";
                 licznik.innerText = "488"; ////
                 przycisk.appendChild(licznik);
@@ -280,6 +280,7 @@ function aktywnedymki() {
     aktywny_dymek.classList.toggle("widocznosc");
 }
 
+let przycisk;
 function zmieniajdymki(przycisk, dymek, zamknij) {
     if(przycisk) {
     przycisk.addEventListener("click", () => {
@@ -308,7 +309,7 @@ function zmieniajdymki(przycisk, dymek, zamknij) {
 }
     if (zamknij) {
         document.querySelector(zamknij).addEventListener("click", () => {
-            aktywnedymk = false;
+            let aktywnedymk = false;
             przycisk.classList.toggle("aktywny_przycisk");
             dymek.classList.toggle("widocznosc");
             aktywny_dymek = null;
@@ -609,7 +610,7 @@ function dodawanie_postow() {
 
 
 function nowe_posty() {
-    gdzie = document.getElementById("aktulnosci");
+    const gdzie = document.getElementById("aktulnosci");
     const danenowyposta = [{"idp":"118","iduzytkownika":"2","tresc":"pixel","foty":"","datadodania":"2023-11-26 12:01:14","publiczny":"1","id":"2","imie":"Dominik","nazwisko":"Kapitan","profilowe":"","folder":"dominik_kapitan_2","licznikpolubien":0,"licznikomentarzy":0,"polubiono":false,"czymoj":true}]
 
     if(danenowyposta.length > 0) {
@@ -661,7 +662,7 @@ function nowe_posty() {
         let tresc_posta = nowy_postp.appendChild(tresc);
 
         if (danenowypost.foty != "") {
-            post_zdjecia = document.createElement("div");
+            const post_zdjecia = document.createElement("div");
             post_zdjecia.className = "post_zdjecia"
             let tresc_fota = tresc_posta.appendChild(post_zdjecia);
             tresc_fota.innerHTML += `<img loading="lazy" src="/foty/${danenowypost.folder}/posty/${danenowypost.foty}" alt="zdjecie posta"/>`;
@@ -670,9 +671,9 @@ function nowe_posty() {
 
 
 
-        dol_posta = document.createElement('div');
+        const dol_posta = document.createElement('div');
         dol_posta.className = "licznik_posta";
-        dol = nowy_postp.appendChild(dol_posta);
+        const dol = nowy_postp.appendChild(dol_posta);
 
 
 
