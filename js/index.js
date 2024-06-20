@@ -1,3 +1,4 @@
+
 "strict mode";
 
 const body = document.querySelector("body");
@@ -208,7 +209,7 @@ function nowy_dym_wysz() {
         let okno = document.createElement("div");
         okno.id = oknienko_id[0];
         okno.classList = "powiadomienia";
-        
+
         let h2 = document.createElement("h2");
         if(oknienko_id[0] != "wyszukaj") {
         h2.innerText = oknienko_id[2] + " :";
@@ -321,7 +322,7 @@ function zmieniajdymki(przycisk, dymek, zamknij) {
         });
     }
 
-  
+
 
     /*   if (dymek !== document.getElementById("wyszukaj")) {
                przycisk.addEventListener("blur", () => { //jakby okienka się zamykali wyłączyć
@@ -458,7 +459,7 @@ function renderuj_wstawianie_nowy_post() {
                 zdjecia_w_poscie.set(pliki.files[i].name + "__nr__" + licznik_zdjec,{
                 plik : pliki.files[i],
                 });
-    
+
                 const url = czytnik.result;
                 const foty = document.createElement("div");
                 const zamknij = document.createElement("div");
@@ -477,7 +478,7 @@ function renderuj_wstawianie_nowy_post() {
                 nowe_foto.alt = "zdjęcie posta";
                 nowe_foto.src = url;
                 foty.dataset.nazwa_pliku = pliki.files[i].name + "__nr__" + licznik_zdjec;
-   
+
                 foty.appendChild(nowe_foto)
                 podglad_zdjec.appendChild(foty);
             };
@@ -570,7 +571,7 @@ function loader_post(loader) {
         <div class="post_informacje"><div style="width:58px;height:58px;border:1px solid black;border-radius:50%;background:black;animation:miganie 4s infinite;float:left"></div><div class="post_imie" style="background:black;width:50%;height:48px;left:12%;top:4px;animation:miganie 2s infinite;"></div></div>
         <div class="post_tresc" style="background:black;height:48px;;animation:miganie 2s infinite;"></div>
         </div>
-    </article>   
+    </article>
     `;
 }
 
@@ -596,7 +597,7 @@ function prawa_burta() {
 function dodawanie_postow() {
     const div = document.createElement("div");
     div.className = 'post';
-   
+
     div.style.minHeight = "88px";
     div.style.width = "98%"
     div.style.padding = "8px";
@@ -638,7 +639,7 @@ function nowe_posty() {
 
         post_informacja.innerHTML += `
                           <a href="/profil/${danenowypost.iduzytkownika}">    <div class="post_imie">${danenowypost.imie}  ${danenowypost.nazwisko} </div></a>
-                          
+
                           <div class="post_data"><a href="/profil/${danenowypost.iduzytkownika}/post/${danenowypost.idp}"><time>${danenowypost.datadodania}</time></a><button style="border-radius:8px;margin: 2px 0 0 8px;background:silver;">Dodał/a posta</button></div>
                           <div class="opcjeposta opcjeposta_usuwanie wysrodkowanie" onclick="menuposta(this)" data-postid="${danenowypost.idp}"><span>...</span></div>`;
         const pmenu_posta_opcje = document.createElement("div");
@@ -734,7 +735,7 @@ function nowe_posty() {
     }
     } else {
         if(document.getElementById("aktulnosci").innerText.trim() !== "") {
-        gdzie.innerHTML += "<div class='wszyatkonadzis'>To już wszystko na dziś</div>"; 
+        gdzie.innerHTML += "<div class='wszyatkonadzis'>To już wszystko na dziś</div>";
         } else {
             document.getElementById("aktulnosci").innerHTML += "<div class='wszyatkonadzis'>Nie ma nic dzisiaj do wyświetlenia zajrzyj tutaj później</div>";
         }
